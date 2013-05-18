@@ -43,9 +43,9 @@ get_header(); ?>
 			                                               
                 if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 				  the_post_thumbnail('homepage-image',array('class'=>'left'));
-				} /*else {?>
-					<img src="/wp-content/themes/riotradio/images/record250.jpg" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="left" />	<?php	
-				}*/?>
+				} else {
+					echo "<img src='".catch_that_image()."' class='left' width='250' />";	
+                }?>
 				
 				<?php the_excerpt(); ?>
                 <?php comments_popup_link('', '1 <img src="/wp-content/themes/riotradio/images/speech-bubble.png" alt="Comment" title="1 Comment">', '% <img src="/wp-content/themes/riotradio/images/speech-bubble.png" alt="Comments" title="% Comments">'); ?><br />
